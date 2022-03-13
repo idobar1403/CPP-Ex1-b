@@ -6,6 +6,9 @@
 using namespace std;
 namespace ariel {
 std::string mat(int columns, int rows, char sym1, char sym2){
+    if (sym1 < '!' || sym1 > '~' || sym2 < '!' || sym2 > '~' ){
+        throw invalid_argument("not valid char");
+    }
     if(columns<0 || rows<0){
         throw invalid_argument("Mat size is always odd");
     }
